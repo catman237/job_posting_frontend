@@ -1,0 +1,55 @@
+.headerHolder {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0EB1D2;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.headerText {
+  display: flex;
+  padding-left: 1rem;
+}
+
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: .5rem;
+  border: 1px solid black;
+  height: 80vw;
+  width: 100%;
+}
+
+.footerContainer {
+  border: 1px solid blue;
+}
+
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.inputContainer {
+  padding: .25rem;
+  
+}
+
+.button {
+  margin-top: -0.8rem;
+}
+
+.selectButton {
+  width: 9.6rem
+}
+
+.inputFeild {
+  width: 9rem
+}
