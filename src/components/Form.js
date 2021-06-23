@@ -23,7 +23,7 @@ const Form = () => {
                 </div>
 
                 <div className="inputContainer">
-                    <select className="selectButton" name="number of applications" id="salary">
+                    <select className="selectButton" name="numberOfInterviews" id="numberOfInterviews">
                         <option value="0"># of application</option>
                         <option value="50,000">50,000</option>
                         <option value="60,000">60,000</option>
@@ -31,6 +31,17 @@ const Form = () => {
                         <option value="80,000">80,000</option>
                         <option value="90,000">90,000</option>
                         <option value="100,000">100,000</option>
+                    </select>
+                </div>
+                <div className="inputContainer">
+                    <select className="selectButton" name="numberOfApplications" id="numberOfApplications">
+                        <option value="0"># of application</option>
+                        <option value="50">50</option>
+                        <option value="60">60</option>
+                        <option value="70">70</option>
+                        <option value="80">80</option>
+                        <option value="90">90</option>
+                        <option value="100">100</option>
                     </select>
                 </div>
 
