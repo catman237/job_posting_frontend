@@ -1,13 +1,17 @@
 import React from 'react'
+import Card from './Card'
 
 const JobContainer = (props) => {
-    console.log(props)
-    return (
-        <div className="postedJobs">
-            <h1>{props.jobs.name}</h1>
-        </div>
-    )
-}
+    function renderJobs(){
+        return props.jobs.map(job => {
+            return <Card job={job} delete={() => props.setJobs('')}/>
+        })
+    }
 
+    return <section className="postedJobs">
+        {renderJobs()}
+    </section>
+
+}
 export default JobContainer
 

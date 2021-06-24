@@ -1,38 +1,40 @@
-import { useState, useEffect, Component } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css';
 import HeaderSection from './components/Header';
-import Form from './components/Form'
+import Form from './components/jobForm'
 import Footer from './components/Footer'
 import JobContainer from './components/JobContainer'
-
-const submitCareerForm = () => {
-  console.log("submitted Career form")
-}
+import FormTitle from './components/FormTitle';
+import 'semantic-ui-css/semantic.min.css'
 
 
-export default class App extends Component {
 
-  state = {
-    jobs: []
-  }
 
-  componentDidMount() {
+
+const App = () => {
+
+  const [jobs, setJobs] = useState([])
+  const [stale, setStale] = useState(true)
+
+
+  useEffect(() => {
     fetch('http://localhost:3000/jobs')
       .then(resp => resp.json())
-      .then(jobs => {
-        this.setState({ jobs })
+      .then(data => {
+        setJobs(data)
+        setStale(false)
       })
-  }
+  }, [stale])
 
+  return (
+    <div>
+      <HeaderSection />
+      <FormTitle />
+      <Form onSubmit={() => setStale(true)} />
+      <JobContainer jobs={jobs} delete={() => setJobs()}/>
+      <Footer />
+    </div>
+  )
 
-  render() {
-    return (
-      <div>
-        <HeaderSection />
-        <Form />
-        <JobContainer jobs={this.state.jobs}/>
-        <Footer />
-      </div>
-    )
-  }
 }
+ export default App

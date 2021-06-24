@@ -1,55 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
 .headerHolder {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #0EB1D2;
+  height: 5rem;
+  padding-left: 1rem;
 }
 
-.menu {
+.headerText {
+  display: flex;
+  align-items: center;
+}
+
+.headerMenuHolder {
+  padding-right: 1rem;
+}
+
+.formTitle {
+  /* background-color: #D33F49; */
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
   display: flex;
   align-items: center;
   padding-right: 1rem;
 }
 
-.headerText {
-  display: flex;
-  padding-left: 1rem;
-}
-
-
 .formContainer {
+  /* background-color: #D33F49; */
   display: flex;
   justify-content: center;
-  padding-top: .5rem;
-  border: 1px solid black;
-  height: 80vw;
+  align-items: center;
+  height: 20rem;
   width: 100%;
 }
-
-.footerContainer {
-  border: 1px solid blue;
-}
-
 
 .form {
   display: flex;
   align-items: center;
   flex-direction: column;
-  
 }
 
 .inputContainer {
-  padding: .25rem;
-  
-}
-
-.button {
-  margin-top: -0.8rem;
+  display: flex;
+  justify-content: center;
+  padding: .2rem;
 }
 
 .selectButton {
-  width: 9.6rem
+  width: 9.6rem;
+  padding: .2rem ;
+  border-radius: .4rem;
+  display: flex;
+  justify-content: center;
 }
 
 .inputFeild {
   width: 9rem
+}
+
+.postedJobs {
+  background-color: #0EB1D2;
+  padding: 1rem;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.card {
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cardInfo {
+  padding: .2rem;
+}
+
+.cardDate {
+  font-size: .8rem;
+}
+
+.footerContainer {
+  height: 5rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
