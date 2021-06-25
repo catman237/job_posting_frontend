@@ -52,7 +52,10 @@ const Form = (props) => {
                 </div>
 
                 <div class="ui input" className="inputContainer">
-                    <select name="" id="" value={cohort} className="selectButton" onChange={(e) => setCohort(e.target.value)}>
+                    <select 
+                    value={cohort} 
+                    className="selectButton" 
+                    onChange={(e) => setCohort(e.target.value)}>
                         <option value="Cohort">Cohort</option>
                         <option value="404">404</option>
                         <option value="Hack Street">Hack Street</option>
@@ -60,46 +63,32 @@ const Form = (props) => {
                 </div>
 
                 <div class="ui input" className="inputContainer">
-                    <input
-                        type="date"
-                        placeholder="Date"
-                        className="selectButton"
-                        value={date}
-                        onChange={(e) => setDate(e.target.value)} />
+                        <input
+                            type="date"
+                            placeholder="Date"
+                            className="selectButton"
+                            value={date}
+                            onChange={(e) => setDate(e.target.value)} />
                 </div>
 
                 <div className="inputContainer">
-                    <select
-                        className="selectButton"
-                        name="numberOfInterviews"
-                        id="numberOfInterviews"
-                        value={interviews}
-                        onChange={(e) => setInterviews(e.target.value)}>
-                        <option value="0"># of applications</option>
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
-                        <option value="40">40</option>
-                        <option value="50">50</option>
-                        <option value="60">60</option>
-                    </select>
+               <input
+                type="number"
+                className="selectButton"
+                placeholder="# of applications"
+                value={applications}
+                onChange={(e) => setApplications(e.target.value)}
+                />
                 </div>
 
                 <div className="inputContainer">
-                    <select
-                        className="selectButton"
-                        name="numberOfApplications"
-                        id="numberOfApplications"
-                        value={applications}
-                        onChange={(e) => setApplications(e.target.value)}>
-                        <option value="0"># of interviews</option>
-                        <option value="50">10</option>
-                        <option value="60">20</option>
-                        <option value="70">30</option>
-                        <option value="80">40</option>
-                        <option value="90">50</option>
-                        <option value="100">60</option>
-                    </select>
+                    <input 
+                    type="number" 
+                    className="selectButton" 
+                    placeholder="# of interviews" 
+                    value={interviews}
+                    onChange={(e) => setInterviews(e.target.value)}
+                    />
                 </div>
 
                 <div className="inputContainer">
@@ -181,7 +170,7 @@ const Form = (props) => {
                         <option value="100000">100,000</option>
                     </select>
                 </div>
-                
+
                 <div className="selectButton">
                     <button
                         class="ui button"

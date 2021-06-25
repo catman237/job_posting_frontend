@@ -4,7 +4,7 @@ import Card from './Card'
 const JobContainer = (props) => {
     function renderJobs(){
         return props.jobs.map(job => {
-            return <Card job={job} delete={() => props.setJobs('')}/>
+            return <Card job={job} key={job.id} removeJob={props.removeJob}/>
         })
     }
 

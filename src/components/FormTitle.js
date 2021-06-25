@@ -1,11 +1,13 @@
 import React from 'react'
-import { Header, Divider} from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
 
 const FormTitle = () => {
     return (
-        <Header className="formTitle" as="h1">
-            Job Form
-        </Header>
+        <div className="formTitleDiv">
+            <Header className="formTitle" as="h1">
+                Job Form
+            </Header>
+        </div>
 
     )
 }
