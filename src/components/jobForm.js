@@ -1,16 +1,22 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import { Input, Select } from "semantic-ui-react"
 
 const Form = (props) => {
 
     const [name, setName] = useState('')
-    const [cohort, setCohort] = useState('')
-    const [date, setDate] = useState('')
-    const [interviews, setInterviews] = useState('')
-    const [applications, setApplications] = useState('')
-    const [state, setState] = useState('')
-    const [salary, setSalary] = useState('')
 
+    const [cohort, setCohort] = useState('')
+
+    const [date, setDate] = useState('')
+
+    const [interviews, setInterviews] = useState('')
+
+    const [applications, setApplications] = useState('')
+
+    const [state, setState] = useState('')
+
+    const [salary, setSalary] = useState('')
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -37,6 +43,73 @@ const Form = (props) => {
             .then(props.onSubmit)
     }
 
+
+    const salaryOptions = [
+        { key: "50,000", value: "50'000", text: "50000", icon: "dollar"  },
+        { key: "60,000", value: "60,000", text: "60000", icon: "dollar" },
+        { key: "70,000", value: "70,000", text: "70000", icon: "dollar" },
+        { key: "80,000", value: "80,000", text: "80000", icon: "dollar" },
+        { key: "90,000", value: "90,000", text: "90000", icon: "dollar" },
+        { key: "100,000", value: "100,000", text: "100000", icon: "dollar" },
+    ]
+
+    const stateOptions = [
+        { key: "AL", value: "AL", text: "AL", icon: "map marker alternate" },
+        { key: "AK", value: "AK", text: "AK", icon: "map marker alternate" },
+        { key: "AZ", value: "AZ", text: "AZ", icon: "map marker alternate" },
+        { key: "AR", value: "AR", text: "AR", icon: "map marker alternate" },
+        { key: "CA", value: "CA", text: "CA", icon: "map marker alternate" },
+        { key: "CO", value: "CO", text: "CO", icon: "map marker alternate" },
+        { key: "CT", value: "CT", text: "CT", icon: "map marker alternate" },
+        { key: "DE", value: "DE", text: "DE", icon: "map marker alternate" },
+        { key: "DC", value: "DC", text: "DC", icon: "map marker alternate" },
+        { key: "FL", value: "FL", text: "FL", icon: "map marker alternate"},
+        { key: "GA", value: "GA", text: "GA", icon: "map marker alternate" },
+        { key: "HI", value: "HI", text: "HI", icon: "map marker alternate" },
+        { key: "ID", value: "ID", text: "ID", icon: "map marker alternate" },
+        { key: "IL", value: "IL", text: "IL", icon: "map marker alternate" },
+        { key: "IN", value: "IN", text: "IN", icon: "map marker alternate" },
+        { key: "IA", value: "IA", text: "IA", icon: "map marker alternate" },
+        { key: "KS", value: "KS", text: "KS", icon: "map marker alternate" },
+        { key: "KY", value: "KY", text: "KY", icon: "map marker alternate" },
+        { key: "LA", value: "LA", text: "LA", icon: "map marker alternate" },
+        { key: "ME", value: "ME", text: "ME", icon: "map marker alternate" },
+        { key: "MD", value: "MD", text: "MD", icon: "map marker alternate" },
+        { key: "MA", value: "MA", text: "MA", icon: "map marker alternate" },
+        { key: "MI", value: "MI", text: "MI", icon: "map marker alternate" },
+        { key: "MN", value: "MN", text: "MN", icon: "map marker alternate" },
+        { key: "MS", value: "MS", text: "MS", icon: "map marker alternate" },
+        { key: "MO", value: "MO", text: "MO", icon: "map marker alternate" },
+        { key: "MT", value: "MT", text: "MT", icon: "map marker alternate" },
+        { key: "NE", value: "NE", text: "NE", icon: "map marker alternate" },
+        { key: "NV", value: "NV", text: "NV", icon: "map marker alternate" },
+        { key: "NH", value: "NH", text: "NH", icon: "map marker alternate" },
+        { key: "NJ", value: "NJ", text: "NJ", icon: "map marker alternate" },
+        { key: "NM", value: "NM", text: "NM", icon: "map marker alternate" },
+        { key: "NY", value: "NY", text: "NY", icon: "map marker alternate" },
+        { key: "NC", value: "NC", text: "NC", icon: "map marker alternate" },
+        { key: "ND", value: "ND", text: "ND", icon: "map marker alternate" },
+        { key: "OH", value: "OH", text: "OH", icon: "map marker alternate" },
+        { key: "OK", value: "OK", text: "OK", icon: "map marker alternate" },
+        { key: "OR", value: "OR", text: "OR", icon: "map marker alternate" },
+        { key: "PA", value: "PA", text: "PA", icon: "map marker alternate" },
+        { key: "RI", value: "RI", text: "RI", icon: "map marker alternate" },
+        { key: "SC", value: "SC", text: "SC", icon: "map marker alternate" },
+        { key: "TN", value: "TN", text: "TN", icon: "map marker alternate" },
+        { key: "TX", value: "TX", text: "TX", icon: "map marker alternate" },
+        { key: "UT", value: "UT", text: "UT", icon: "map marker alternate" },
+        { key: "VT", value: "VT", text: "VT", icon: "map marker alternate" },
+        { key: "VA", value: "VA", text: "VA", icon: "map marker alternate"},
+        { key: "WA", value: "WA", text: "WA", icon: "map marker alternate" },
+        { key: "WV", value: "WV", text: "WV" , icon: "map marker alternate"},
+        { key: "WI", value: "WI", text: "WI", icon: "map marker alternate" },
+        { key: "WY", value: "WY", text: "WY", icon: "map marker alternate" }
+    ]
+
+    const cohortOptions = [
+        {key: "404", value: "404", text: "404", icon: "group"}
+    ]
+
     return (
         <div className="formContainer" >
 
@@ -44,7 +117,7 @@ const Form = (props) => {
 
                 <div class="ui input"
                     className="inputContainer">
-                    <input type="text"
+                    <Input type="text"
                         placeholder="Your name"
                         className="selectButton"
                         value={name}
@@ -52,123 +125,54 @@ const Form = (props) => {
                 </div>
 
                 <div class="ui input" className="inputContainer">
-                    <select 
-                    value={cohort} 
-                    className="selectButton" 
-                    onChange={(e) => setCohort(e.target.value)}>
-                        <option value="Cohort">Cohort</option>
-                        <option value="404">404</option>
-                        <option value="Hack Street">Hack Street</option>
-                    </select>
+                  <Select 
+                  options={cohortOptions} 
+                  placeholder="Cohort"
+                  onChange={(e) => setCohort(e.target.outerText)} />
                 </div>
 
                 <div class="ui input" className="inputContainer">
-                        <input
-                            type="date"
-                            placeholder="Date"
-                            className="selectButton"
-                            value={date}
-                            onChange={(e) => setDate(e.target.value)} />
+                    <Input
+                        type="date"
+                        placeholder="Date"
+                        className="selectButton"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)} />
                 </div>
 
                 <div className="inputContainer">
-               <input
-                type="number"
-                className="selectButton"
-                placeholder="# of applications"
-                value={applications}
-                onChange={(e) => setApplications(e.target.value)}
-                />
-                </div>
-
-                <div className="inputContainer">
-                    <input 
-                    type="number" 
-                    className="selectButton" 
-                    placeholder="# of interviews" 
-                    value={interviews}
-                    onChange={(e) => setInterviews(e.target.value)}
+                    <Input
+                        type="number"
+                        className="selectButton"
+                        placeholder="# of applications"
+                        value={applications}
+                        onChange={(e) => setApplications(e.target.value)}
                     />
                 </div>
 
                 <div className="inputContainer">
-                    <select
-                        class="ui search dropdown"
+                    <Input
+                        type="number"
                         className="selectButton"
-                        value={state}
-                        onChange={(e) => setState(e.target.value)}>
-
-                        <option value="">State</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District Of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
+                        placeholder="# of interviews"
+                        value={interviews}
+                        onChange={(e) => setInterviews(e.target.value)}
+                    />
                 </div>
 
                 <div className="inputContainer">
-                    <select
-                        name="salary"
-                        id="salary"
-                        className="selectButton"
-                        value={salary}
-                        onChange={(e) => setSalary(e.target.value)}>
+                    <Select 
+                    placeholder={"State"} 
+                    options={stateOptions} 
+                    className="selectButton"
+                    onChange={(e) => setState(e.target.outerText)}/>
+                </div>
 
-                        <option value="0">Salary</option>
-                        <option value="50000">50,000</option>
-                        <option value="60000">60,000</option>
-                        <option value="70000">70,000</option>
-                        <option value="80000">80,000</option>
-                        <option value="90000">90,000</option>
-                        <option value="100000">100,000</option>
-                    </select>
+                <div className="inputContainer">
+                    <Select 
+                    placeholder="Salary" 
+                    options={salaryOptions} 
+                    onChange={(e) => setSalary(parseInt(e.target.outerText))}/>
                 </div>
 
                 <div className="selectButton">

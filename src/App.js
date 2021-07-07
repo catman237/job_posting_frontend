@@ -36,17 +36,10 @@ const App = () => {
   const removeJob = (currentJob) => {
     const updatedJob = jobs.filter(job => job.id !== currentJob.id)
     setJobs(updatedJob)
-
     const options = {
-      "method": "DELETE",
-      "headers": {
-        "accept": "application/json",
-        "content-type": "application/json"
-      }
+      "method": "DELETE"
     }
-
     const deletedJob = jobsUrl + currentJob.id
-
     fetch(deletedJob, options)
   }
 
